@@ -21,7 +21,7 @@
                         Thoughtfully formulated skincare that works with your skin, not against it. Clean ingredients, real results.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        @foreach(['Serums','Moisturisers','Toners','SPF','Sets']) as $cat)
+                        @foreach(['Serums','Moisturisers','Toners','SPF','Sets'] as $cat)
                         <span class="bg-white border border-rose-200 text-rose-500 text-xs font-medium px-4 py-1.5 rounded-full hover:bg-rose-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
                         @endforeach
                     </div>

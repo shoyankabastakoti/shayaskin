@@ -25,7 +25,7 @@
                         Makeup that celebrates your unique features. Buildable coverage, skin-loving ingredients, and shades for everyone.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        @foreach(['Face','Eyes','Lips','Palettes','Sets']) as $cat)
+                        @foreach(['Face','Eyes','Lips','Palettes','Sets'] as $cat)
                         <span class="bg-white border border-orange-200 text-orange-500 text-xs font-medium px-4 py-1.5 rounded-full hover:bg-orange-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
                         @endforeach
                     </div>
