@@ -1,0 +1,25 @@
+name-shaya skin
+
+
+navigation
+home , makeup,skincare,,aboutus,contact us
+        
+makeup page - skintypes (oily, dry , combination ,all skin type)
+skincare-skintypes(oily ,dry,combination ,all skin type)
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          primary: '#D94368',      // Main pink button color
+          primaryHover: '#B83253', // Darker pink hover
+          blush: '#F9ECE8',        // Hero banner background
+          cardBg: '#F6ECE8',       // Product card soft background
+          textDark: '#2B2423',     // Headings
+          textMuted: '#6E6563',    // Subtitles & body text
+          topbar: '#FCEFEF'        // Top bar background
+        }
+      }
+    }
+  }
+}
