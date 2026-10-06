@@ -46,7 +46,7 @@
 
                 {{-- CTA Button --}}
                 <a href="{{ route('skincare') }}" id="header-shop-btn"
-                   class="hidden md:inline-flex items-center gap-2 shrink-0 bg-rose-500 hover:bg-rose-600 text-white text-xs font-semibold uppercase tracking-widest px-5 py-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-rose-200">
+                   class="hidden md:inline-flex items-center gap-2 shrink-0 bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold uppercase tracking-widest px-5 py-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-rose-200">
                     Shop Now ↗
                 </a>
 
@@ -88,7 +88,7 @@
                         <img src="{{ asset('images/logo.png') }}" alt="" class="w-9 h-9 rounded-lg object-cover">
                         <span class="font-serif text-xl tracking-tight">shaya <span class="text-rose-400 font-light">skin</span></span>
                     </a>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-6">Feel good in your skin. Every single day.</p>
+                    <p class="text-stone-400 text-base leading-relaxed mb-6">Feel good in your skin. Every single day.</p>
                     <div class="flex gap-3">
                         <a href="#" id="social-ig"  aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-rose-500 flex items-center justify-center transition-colors duration-200">
                             <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -104,36 +104,36 @@
 
                 {{-- Quick Links --}}
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5">Quick Links</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-stone-400 mb-5">Quick Links</h4>
                     <ul class="flex flex-col gap-3">
-                        <li><a href="{{ route('home') }}"     id="footer-home"     class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Home</a></li>
-                        <li><a href="{{ route('skincare') }}" id="footer-skincare" class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Skincare</a></li>
-                        <li><a href="{{ route('makeup') }}"   id="footer-makeup"   class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Makeup</a></li>
-                        <li><a href="{{ route('about') }}"    id="footer-about"    class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">About Us</a></li>
-                        <li><a href="{{ route('contact') }}"  id="footer-contact"  class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Contact Us</a></li>
+                        <li><a href="{{ route('home') }}"     id="footer-home"     class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Home</a></li>
+                        <li><a href="{{ route('skincare') }}" id="footer-skincare" class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Skincare</a></li>
+                        <li><a href="{{ route('makeup') }}"   id="footer-makeup"   class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Makeup</a></li>
+                        <li><a href="{{ route('about') }}"    id="footer-about"    class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">About Us</a></li>
+                        <li><a href="{{ route('contact') }}"  id="footer-contact"  class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Contact Us</a></li>
                     </ul>
                 </div>
 
                 {{-- Help --}}
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5">Help</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-stone-400 mb-5">Help</h4>
                     <ul class="flex flex-col gap-3">
-                        <li><a href="{{ route('contact') }}" id="footer-shipping" class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Shipping Info</a></li>
-                        <li><a href="{{ route('contact') }}" id="footer-returns"  class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Returns</a></li>
-                        <li><a href="{{ route('contact') }}" id="footer-faq"      class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">FAQ</a></li>
-                        <li><a href="{{ route('contact') }}" id="footer-track"    class="text-stone-300 hover:text-rose-300 text-sm transition-colors duration-150">Track Order</a></li>
+                        <li><a href="{{ route('contact') }}" id="footer-shipping" class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Shipping Info</a></li>
+                        <li><a href="{{ route('contact') }}" id="footer-returns"  class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Returns</a></li>
+                        <li><a href="{{ route('contact') }}" id="footer-faq"      class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">FAQ</a></li>
+                        <li><a href="{{ route('contact') }}" id="footer-track"    class="text-stone-300 hover:text-rose-300 text-base transition-colors duration-150">Track Order</a></li>
                     </ul>
                 </div>
 
                 {{-- Newsletter --}}
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5">Stay in the glow</h4>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-4">Get skincare tips, new arrivals &amp; exclusive offers.</p>
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-stone-400 mb-5">Stay in the glow</h4>
+                    <p class="text-stone-400 text-base leading-relaxed mb-4">Get skincare tips, new arrivals &amp; exclusive offers.</p>
                     <form class="flex gap-2" id="newsletter-form" novalidate>
                         <input type="email" id="newsletter-email" placeholder="your@email.com" required
-                               class="flex-1 min-w-0 bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-sm text-white placeholder-stone-400 focus:outline-none focus:border-rose-400 transition-colors duration-150">
+                               class="flex-1 min-w-0 bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-base text-white placeholder-stone-400 focus:outline-none focus:border-rose-400 transition-colors duration-150">
                         <button type="submit" id="newsletter-submit"
-                                class="bg-rose-500 hover:bg-rose-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 whitespace-nowrap">
+                                class="bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 whitespace-nowrap">
                             Join →
                         </button>
                     </form>
@@ -144,10 +144,10 @@
 
         <div class="border-t border-white/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <p class="text-stone-500 text-xs">© {{ date('Y') }} Shaya Skin. Made with love &amp; care.</p>
+                <p class="text-stone-500 text-sm">© {{ date('Y') }} Shaya Skin. Made with love &amp; care.</p>
                 <div class="flex gap-5">
-                    <a href="#" id="footer-privacy" class="text-stone-500 hover:text-rose-400 text-xs transition-colors duration-150">Privacy Policy</a>
-                    <a href="#" id="footer-terms"   class="text-stone-500 hover:text-rose-400 text-xs transition-colors duration-150">Terms of Service</a>
+                    <a href="#" id="footer-privacy" class="text-stone-500 hover:text-rose-400 text-sm transition-colors duration-150">Privacy Policy</a>
+                    <a href="#" id="footer-terms"   class="text-stone-500 hover:text-rose-400 text-sm transition-colors duration-150">Terms of Service</a>
                 </div>
             </div>
         </div>

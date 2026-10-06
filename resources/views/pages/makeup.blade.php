@@ -21,12 +21,12 @@
                     <h1 class="font-serif text-5xl sm:text-6xl font-medium tracking-tight leading-[1.05] text-stone-800 mb-5">
                         Enhance.<br><em class="text-orange-500 not-italic font-normal">Express.</em>
                     </h1>
-                    <p class="text-stone-500 text-base leading-relaxed max-w-md mb-8">
+                    <p class="text-stone-500 text-lg leading-relaxed max-w-md mb-8">
                         Makeup that celebrates your unique features. Buildable coverage, skin-loving ingredients, and shades for everyone.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         @foreach(['Face','Eyes','Lips','Palettes','Sets'] as $cat)
-                        <span class="bg-white border border-orange-200 text-orange-500 text-xs font-medium px-4 py-1.5 rounded-full hover:bg-orange-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
+                        <span class="bg-white border border-orange-200 text-orange-500 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-orange-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
                         @endforeach
                     </div>
                 </div>
@@ -40,10 +40,10 @@
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
                 <div>
                     <h2 id="makeup-products-heading" class="font-serif text-3xl sm:text-4xl font-medium text-stone-800">All Makeup Products</h2>
-                    <p class="text-stone-400 text-sm mt-1">4 products</p>
+                    <p class="text-stone-400 text-base mt-1">4 products</p>
                 </div>
                 <select id="sort-makeup" aria-label="Sort products"
-                        class="border border-orange-200 rounded-lg px-4 py-2 text-sm text-stone-600 focus:outline-none focus:ring-2 focus:ring-orange-300 bg-white">
+                        class="border border-orange-200 rounded-lg px-4 py-2 text-base text-stone-600 focus:outline-none focus:ring-2 focus:ring-orange-300 bg-white">
                     <option>Sort: Featured</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -65,14 +65,14 @@
                         @if($tag)
                         <span class="absolute top-3 left-3 bg-orange-500 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{{ $tag }}</span>
                         @endif
-                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-xs font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-sm font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             + Add to Cart
                         </button>
                     </div>
                     <div class="p-5 bg-white">
-                        <div class="text-amber-400 text-sm mb-1">★★★★★ <span class="text-stone-400 text-xs">({{ $reviews }})</span></div>
+                        <div class="text-amber-400 text-base mb-1">★★★★★ <span class="text-stone-400 text-sm">({{ $reviews }})</span></div>
                         <h3 class="font-serif text-xl font-medium text-stone-800 mb-1.5">{{ $name }}</h3>
-                        <p class="text-stone-400 text-xs leading-relaxed mb-4">{{ $desc }}</p>
+                        <p class="text-stone-400 text-sm leading-relaxed mb-4">{{ $desc }}</p>
                         <div class="flex items-center justify-between">
                             <span class="font-serif text-xl font-semibold text-orange-500">{{ $price }}</span>
                             <button class="quick-add-btn bg-orange-500 hover:bg-orange-600 text-white text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-colors duration-150">

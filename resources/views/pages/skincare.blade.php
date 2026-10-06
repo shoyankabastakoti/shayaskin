@@ -17,12 +17,12 @@
                     <h1 class="font-serif text-5xl sm:text-6xl font-medium tracking-tight leading-[1.05] text-stone-800 mb-5">
                         Your skin.<br><em class="text-rose-500 not-italic font-normal">Your ritual.</em>
                     </h1>
-                    <p class="text-stone-500 text-base leading-relaxed max-w-md mb-8">
+                    <p class="text-stone-500 text-lg leading-relaxed max-w-md mb-8">
                         Thoughtfully formulated skincare that works with your skin, not against it. Clean ingredients, real results.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         @foreach(['Serums','Moisturisers','Toners','SPF','Sets'] as $cat)
-                        <span class="bg-white border border-rose-200 text-rose-500 text-xs font-medium px-4 py-1.5 rounded-full hover:bg-rose-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
+                        <span class="bg-white border border-rose-200 text-rose-500 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-rose-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
                         @endforeach
                     </div>
                 </div>
@@ -40,10 +40,10 @@
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
                 <div>
                     <h2 id="skincare-products-heading" class="font-serif text-3xl sm:text-4xl font-medium text-stone-800">All Skincare Products</h2>
-                    <p class="text-stone-400 text-sm mt-1">6 products</p>
+                    <p class="text-stone-400 text-base mt-1">6 products</p>
                 </div>
                 <select id="sort-skincare" aria-label="Sort products"
-                        class="border border-rose-200 rounded-lg px-4 py-2 text-sm text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white">
+                        class="border border-rose-200 rounded-lg px-4 py-2 text-base text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white">
                     <option>Sort: Featured</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -67,14 +67,14 @@
                         @if($tag)
                         <span class="absolute top-3 left-3 bg-rose-500 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{{ $tag }}</span>
                         @endif
-                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-xs font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-sm font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             + Add to Cart
                         </button>
                     </div>
                     <div class="p-5 bg-white">
-                        <div class="text-amber-400 text-sm mb-1">★★★★★ <span class="text-stone-400 text-xs">({{ $reviews }})</span></div>
+                        <div class="text-amber-400 text-base mb-1">★★★★★ <span class="text-stone-400 text-sm">({{ $reviews }})</span></div>
                         <h3 class="font-serif text-xl font-medium text-stone-800 mb-1.5">{{ $name }}</h3>
-                        <p class="text-stone-400 text-xs leading-relaxed mb-4">{{ $desc }}</p>
+                        <p class="text-stone-400 text-sm leading-relaxed mb-4">{{ $desc }}</p>
                         <div class="flex items-center justify-between">
                             <span class="font-serif text-xl font-semibold text-rose-500">{{ $price }}</span>
                             <button class="quick-add-btn bg-rose-500 hover:bg-rose-600 text-white text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-colors duration-150">
@@ -101,7 +101,7 @@
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
                     <span class="text-4xl block mb-4">{{ $icon }}</span>
                     <h3 class="font-serif text-xl font-medium text-stone-800 mb-3">{{ $title }}</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">{{ $text }}</p>
+                    <p class="text-stone-400 text-base leading-relaxed">{{ $text }}</p>
                 </div>
                 @endforeach
             </div>

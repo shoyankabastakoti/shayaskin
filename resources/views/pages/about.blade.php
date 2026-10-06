@@ -11,7 +11,7 @@
             <h1 id="about-hero-heading" class="font-serif text-5xl sm:text-6xl font-medium tracking-tight leading-[1.05] text-stone-800 mb-6">
                 Redefining <em class="text-rose-500 not-italic font-normal">Natural Beauty.</em>
             </h1>
-            <p class="text-stone-500 text-lg leading-relaxed max-w-2xl mx-auto">
+            <p class="text-stone-500 text-xl leading-relaxed max-w-2xl mx-auto">
                 At Shaya Skin, we believe that the best foundation you can wear is healthy, glowing skin. Our mission is to simplify your routine with effective, clean essentials.
             </p>
         </div>
@@ -26,7 +26,7 @@
                          class="w-full h-[500px] object-cover rounded-3xl shadow-xl shadow-rose-100">
                     <div class="absolute -bottom-8 -right-8 bg-rose-500 text-white p-8 rounded-2xl shadow-lg hidden md:block">
                         <p class="font-serif text-4xl font-medium mb-1">5k+</p>
-                        <p class="text-xs uppercase tracking-widest font-semibold">Happy Customers</p>
+                        <p class="text-sm uppercase tracking-widest font-semibold">Happy Customers</p>
                     </div>
                 </div>
                 <div>
@@ -36,7 +36,7 @@
                     <h2 class="font-serif text-4xl font-medium tracking-tight text-stone-800 mb-6">
                         Good skin isn't a look.<br>It's feeling like yourself.
                     </h2>
-                    <div class="space-y-5 text-stone-500 text-base leading-relaxed">
+                    <div class="space-y-5 text-stone-500 text-lg leading-relaxed">
                         <p>
                             It started with a simple question: Why is finding the right skincare so complicated? We saw aisles filled with confusing claims, harsh ingredients, and unattainable beauty standards. We wanted something different.
                         </p>
@@ -72,7 +72,7 @@
                         <span class="block w-8 h-8 bg-rose-500 rounded-full"></span>
                     </div>
                     <h3 class="font-serif text-2xl font-medium mb-4">{{ $title }}</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">{{ $desc }}</p>
+                    <p class="text-stone-400 text-base leading-relaxed">{{ $desc }}</p>
                 </div>
                 @endforeach
             </div>
