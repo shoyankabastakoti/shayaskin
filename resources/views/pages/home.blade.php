@@ -1,243 +1,168 @@
 @extends('layouts.app')
 
-@section('title', 'Shaya Skin')
-@section('meta_description', 'Shaya Skin — Premium skincare and makeup crafted for every skin type. Glow naturally, shine confidently.')
+@section('title', 'Home')
 
 @section('content')
-
-    {{-- ── HERO ──────────────────────────────────────────────────── --}}
-    <section aria-label="Hero" class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 overflow-hidden">
-        {{-- Background circle decoration --}}
-        <div class="pointer-events-none absolute -top-24 -right-24 w-[500px] h-[500px] rounded-full bg-pink-200/40 blur-3xl"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-                {{-- Copy --}}
-                <div class="relative z-10">
-                    <p class="flex items-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mb-5">
-                        <span class="block w-6 h-px bg-rose-400"></span> NEW COLLECTION 2025
-                    </p>
-                    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.04] text-stone-800 mb-6">
-                        Glow Naturally.<br><em class="text-rose-500 not-italic font-normal">Shine Confidently.</em>
-                    </h1>
-                    <p class="text-stone-500 text-lg leading-relaxed max-w-md mb-9">
-                        Skincare and beauty essentials that bring out your natural radiance. Made for real skin, every day — clean, cruelty-free &amp; dermatologist tested.
-                    </p>
-                    <div class="flex flex-wrap gap-4 mb-12">
-                        <a href="{{ route('skincare') }}" id="hero-shop-btn"
-                           class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold uppercase tracking-widest px-7 py-3.5 rounded-lg shadow-lg shadow-rose-200 hover:shadow-rose-300 transition-all duration-200 hover:-translate-y-0.5">
-                            Shop Now →
-                        </a>
-                        <a href="{{ route('makeup') }}" id="hero-explore-btn"
-                           class="inline-flex items-center gap-2 border-2 border-rose-400 text-rose-500 hover:bg-rose-500 hover:text-white text-sm font-semibold uppercase tracking-widest px-7 py-3.5 rounded-lg transition-all duration-200 hover:-translate-y-0.5">
-                            Explore Makeup →
-                        </a>
-                    </div>
-
-                    {{-- Badges --}}
-                    <div class="flex flex-wrap gap-6">
-                        @foreach([['🌿','Clean','Ingredients'],['🐰','Cruelty','Free'],['🧪','Dermatologist','Tested'],['✨','All Skin','Types']] as [$icon,$l1,$l2])
-                        <div class="flex flex-col items-center gap-1.5 text-center">
-                            <span class="text-2xl">{{ $icon }}</span>
-                            <span class="text-[9px] font-semibold uppercase tracking-wide text-stone-500 leading-tight">{{ $l1 }}<br>{{ $l2 }}</span>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                {{-- Hero image --}}
-                <div class="relative flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-sm lg:max-w-md">
-                        <img src="{{ asset('images/products/hero_model.jpg') }}"
-                             alt="Woman with glowing skin using Shaya Skin products"
-                             class="w-full h-[420px] lg:h-[520px] object-cover rounded-3xl shadow-2xl shadow-rose-200/60">
-
-                        {{-- Floating product card --}}
-                        <div class="absolute -bottom-5 -left-5 sm:left-0 flex items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-xl animate-bounce-slow">
-                            <img src="{{ asset('images/products/shaya_serum.jpg') }}" alt="Daily Glow Serum" class="w-12 h-12 rounded-xl object-cover">
-                            <div>
-                                <p class="text-sm font-semibold text-stone-800">Daily Glow Serum</p>
-                                <p class="text-[10px] text-amber-400">★★★★★</p>
-                                <p class="text-base font-bold text-rose-500">$42.00</p>
-                            </div>
-                        </div>
-
-                        {{-- Slide dots --}}
-                        <div class="absolute -bottom-5 right-4 flex gap-1.5 items-center">
-                            <span class="w-5 h-1.5 rounded bg-rose-400"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-200"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-200"></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    {{-- ── TRUST BAR ────────────────────────────────────────────── --}}
-    <section aria-label="Why Shaya Skin" class="bg-white border-y border-rose-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-rose-100">
-                @foreach([
-                    ['📦','Free Shipping','On orders over $50'],
-                    ['🔄','Easy Returns','30-day return policy'],
-                    ['🔒','Secure Payment','100% safe checkout'],
-                    ['💬','Customer Support','Always here to help'],
-                ] as [$icon,$title,$sub])
-                <div class="flex items-center gap-3 px-6 py-6">
-                    <span class="text-2xl shrink-0">{{ $icon }}</span>
-                    <div>
-                        <p class="text-base font-semibold text-stone-800">{{ $title }}</p>
-                        <p class="text-sm text-stone-400">{{ $sub }}</p>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- ── SHOP BY CATEGORY ─────────────────────────────────────── --}}
-    <section aria-labelledby="cat-heading" class="py-20 lg:py-28 bg-rose-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <p class="flex items-center justify-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mb-3">
-                    <span class="block w-5 h-px bg-rose-400"></span> EXPLORE OUR RANGE
-                </p>
-                <h2 id="cat-heading" class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-800">Shop by Category</h2>
-                <div class="w-12 h-0.5 bg-rose-400 mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                {{-- Skincare --}}
-                <a href="{{ route('skincare') }}" id="cat-skincare" class="group block rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-rose-100 transition-all duration-300 hover:-translate-y-1">
-                    <div class="relative h-64 sm:h-72 overflow-hidden">
-                        <img src="{{ asset('images/products/skincare_products.jpg') }}" alt="Skincare collection"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <span class="text-white text-sm font-semibold uppercase tracking-widest">Shop Now →</span>
-                        </div>
-                    </div>
-                    <div class="bg-white px-6 py-5">
-                        <h3 class="font-serif text-2xl font-medium text-stone-800 mb-1">Skincare</h3>
-                        <p class="text-stone-400 text-sm">Serums, moisturisers, toners &amp; more</p>
-                    </div>
-                </a>
-
-                {{-- Makeup --}}
-                <a href="{{ route('makeup') }}" id="cat-makeup" class="group block rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-rose-100 transition-all duration-300 hover:-translate-y-1">
-                    <div class="relative h-64 sm:h-72 overflow-hidden">
-                        <img src="{{ asset('images/products/makeup_products.jpg') }}" alt="Makeup collection"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <span class="text-white text-sm font-semibold uppercase tracking-widest">Shop Now →</span>
-                        </div>
-                    </div>
-                    <div class="bg-white px-6 py-5">
-                        <h3 class="font-serif text-2xl font-medium text-stone-800 mb-1">Makeup</h3>
-                        <p class="text-stone-400 text-sm">Foundation, lipstick, eyeshadow &amp; more</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    {{-- ── BEST SELLERS STRIP ───────────────────────────────────── --}}
-    <section aria-labelledby="bs-heading" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <p class="flex items-center justify-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mb-3">
-                    <span class="block w-5 h-px bg-rose-400"></span> CUSTOMER FAVOURITES
-                </p>
-                <h2 id="bs-heading" class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-800">Best Sellers</h2>
-                <div class="w-12 h-0.5 bg-rose-400 mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                @foreach([
-                    ['shaya_serum','Daily Glow Serum','Vitamin C + Hyaluronic Acid','$42.00','NEW','128','skincare'],
-                    ['hydra_cream','Hydra Moisture Cream','Ceramide & Peptide complex','$36.00','BEST SELLER','96','skincare'],
-                    ['luminous_foundation','Luminous Foundation','SPF 20 hydrating radiant finish','$34.00','BEST SELLER','74','makeup'],
-                ] as [$img,$name,$desc,$price,$tag,$reviews,$page])
-                <article class="group bg-rose-50 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-rose-100 transition-all duration-300 hover:-translate-y-1">
-                    <div class="relative h-60 overflow-hidden bg-rose-100">
-                        <img src="{{ asset('images/products/' . $img . '.jpg') }}" alt="{{ $name }}"
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-rose-500 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                            {{ $tag }}
-                        </span>
-                        <button class="absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-sm font-semibold uppercase tracking-wider py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                            + Add to Cart
-                        </button>
-                    </div>
-                    <div class="p-5 bg-white">
-                        <div class="text-amber-400 text-base mb-1">★★★★★ <span class="text-stone-400 text-sm">({{ $reviews }})</span></div>
-                        <h3 class="font-serif text-xl font-medium text-stone-800 mb-1">{{ $name }}</h3>
-                        <p class="text-stone-400 text-sm mb-4">{{ $desc }}</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-serif text-xl font-semibold text-rose-500">{{ $price }}</span>
-                            <a href="{{ route($page) }}" class="text-sm font-semibold text-stone-400 hover:text-rose-500 transition-colors duration-150">Shop →</a>
-                        </div>
-                    </div>
-                </article>
-                @endforeach
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="{{ route('skincare') }}" id="home-view-all"
-                   class="inline-flex items-center gap-2 border-2 border-rose-400 text-rose-500 hover:bg-rose-500 hover:text-white text-sm font-semibold uppercase tracking-widest px-7 py-3 rounded-lg transition-all duration-200">
-                    View All Products →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    {{-- ── ABOUT TEASER ─────────────────────────────────────────── --}}
-    <section aria-labelledby="about-teaser-heading" class="py-20 lg:py-28 bg-rose-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-rose-400 text-2xl">✳︎</span>
-            <p class="flex items-center justify-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mt-4 mb-4">
-                <span class="block w-5 h-px bg-rose-400"></span> A NOTE FROM SHAYA
+<!-- Hero Section -->
+<section class="relative min-h-[600px] overflow-hidden bg-[#F9ECE8] bg-cover bg-[position:60%_center] py-20 lg:py-32" style="background-image: url('{{ asset('images/hero.jpg') }}')">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#F9ECE8]/95 via-[#F9ECE8]/85 to-[#F9ECE8]/20"></div>
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl text-[#2B2023] leading-tight mb-6">
+                Your Skin.<br>
+                <span class="text-[#D94368] italic font-light">Your Beauty.</span><br>
+                Your Shaya.
+            </h1>
+            <p class="text-[#76666B] text-lg sm:text-xl mb-10 leading-relaxed max-w-lg">
+                Discover premium skincare and makeup carefully selected for your unique skin type.
             </p>
-            <h2 id="about-teaser-heading" class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-800 mb-6">
-                Good skin isn't a look.<br><em class="text-rose-500 not-italic font-normal">It's feeling like yourself.</em>
-            </h2>
-            <p class="text-stone-500 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-                We believe the best beauty routine is the one that feels like yours. No pressure, no rules — just thoughtful essentials to help you feel at home in your skin.
-            </p>
-            <a href="{{ route('about') }}" id="home-about-btn"
-               class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold uppercase tracking-widest px-7 py-3.5 rounded-lg shadow-lg shadow-rose-200 transition-all duration-200 hover:-translate-y-0.5">
-                Our Story →
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="{{ route('skin-type', ['category' => 'skincare']) }}" class="text-center bg-[#D94368] hover:bg-[#B83253] text-white font-semibold px-8 py-4 rounded-full transition-colors text-lg shadow-lg shadow-[#D94368]/30 hover:-translate-y-1 duration-300">
+                    Shop Skincare
+                </a>
+                <a href="{{ route('skin-type', ['category' => 'makeup']) }}" class="text-center bg-white hover:bg-[#F6ECE8] text-[#2B2023] font-semibold px-8 py-4 rounded-full transition-colors text-lg shadow-sm border border-[#F6ECE8] hover:-translate-y-1 duration-300">
+                    Shop Makeup
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Best Sellers -->
+<section class="bg-white py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+                <p class="mb-3 text-sm font-bold uppercase tracking-wider text-[#D94368]">Loved by your skin</p>
+                <h2 class="font-serif text-4xl text-[#2B2023] sm:text-5xl">Our Best Sellers</h2>
+            </div>
+            <a href="{{ route('shop') }}" class="font-semibold text-[#D94368] transition-colors hover:text-[#B83253]">
+                Shop all products <span aria-hidden="true">&rarr;</span>
             </a>
         </div>
-    </section>
 
-    {{-- ── TESTIMONIALS ─────────────────────────────────────────── --}}
-    <section aria-labelledby="reviews-heading" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <p class="flex items-center justify-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mb-3">
-                    <span class="block w-5 h-px bg-rose-400"></span> CUSTOMER LOVE
-                </p>
-                <h2 id="reviews-heading" class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-stone-800">What Our Customers Say</h2>
-                <div class="w-12 h-0.5 bg-rose-400 mx-auto mt-4"></div>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            @forelse($bestSellers as $product)
+                <article class="group overflow-hidden rounded-2xl border border-[#F6ECE8] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <a href="{{ route('product', $product['id']) }}" class="block">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-[#F9ECE8]">
+                            <img
+                                src="{{ $product['image'] }}"
+                                alt="{{ $product['name'] }}"
+                                loading="lazy"
+                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            >
+                            <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#D94368]">
+                                Best Seller
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-[#D94368]">{{ $product['category'] }}</p>
+                            <h3 class="mb-2 font-serif text-xl font-semibold text-[#2B2023] transition-colors group-hover:text-[#D94368]">{{ $product['name'] }}</h3>
+                            <p class="mb-5 text-sm leading-relaxed text-[#76666B]">{{ $product['description'] }}</p>
+                            <span class="inline-flex items-center justify-between gap-2 font-semibold text-[#2B2023]">
+                                Rs. {{ number_format($product['price']) }}
+                                <span class="text-[#D94368]">View product <span aria-hidden="true">&rarr;</span></span>
+                            </span>
+                        </div>
+                    </a>
+                </article>
+            @empty
+                <p class="col-span-full text-center text-[#76666B]">Products will appear here once the catalog has been initialized.</p>
+            @endforelse
+        </div>
+    </div>
+</section>
+
+<!-- Shop by Skin Type -->
+<section class="py-24 bg-[#FFF9F7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-[#D94368] text-sm font-bold tracking-wider uppercase mb-3">Personalized For You</p>
+        <h2 class="font-serif text-4xl sm:text-5xl text-[#2B2023] mb-16">Shop according to your skin type</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Oily Skin -->
+            <div class="group bg-white rounded-[2rem] p-8 border border-[#F6ECE8] hover:border-[#D94368]/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="mb-8 grid grid-cols-3 gap-2">
+                    @foreach([
+                        ['image' => 'skincare1', 'name' => 'Heartleaf Cleansing Foam', 'price' => 2150],
+                        ['image' => 'skincare2', 'name' => 'Moisturizing Lotion', 'price' => 2400],
+                        ['image' => 'skincare3', 'name' => 'Lactic Acid Serum', 'price' => 1450],
+                    ] as $product)
+                        <div class="overflow-hidden rounded-xl bg-[#F9ECE8] text-left">
+                            <img
+                                src="{{ asset('images/' . $product['image'] . '.jpg') }}"
+                                alt="{{ $product['name'] }}"
+                                loading="lazy"
+                                class="aspect-[3/4] w-full object-cover"
+                            >
+                            <div class="p-2">
+                                <p class="min-h-10 text-[10px] font-medium leading-tight text-[#2B2023]">{{ $product['name'] }}</p>
+                                <p class="mt-1 text-xs font-bold text-[#D94368]">Rs. {{ number_format($product['price']) }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#2B2023] mb-3">Oily Skin</h3>
+                <p class="text-[#76666B] mb-8 leading-relaxed">Balance excess oil and minimize pores with our lightweight, non-comedogenic formulas.</p>
+                <a href="{{ route('shop', ['skin_type' => 'oily', 'category' => 'all']) }}" class="inline-block border-b-2 border-[#D94368] text-[#D94368] font-bold uppercase tracking-wider pb-1 hover:text-[#B83253] hover:border-[#B83253] transition-colors">
+                    Explore Products →
+                </a>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                @foreach([
-                    ['"The Daily Glow Serum completely transformed my skin. I\'ve never felt so confident going makeup-free!"','Priya S., Mumbai'],
-                    ['"I love that everything is cruelty-free. The Hydra Cream keeps my skin hydrated all day — absolute game changer."','Aisha M., Dubai'],
-                    ['"Shaya Skin\'s foundation is the only one I\'ve found that actually matches and lasts all day. Obsessed!"','Sarah L., London'],
-                ] as [$quote,$author])
-                <blockquote class="bg-rose-50 rounded-2xl p-7 border-l-4 border-rose-400 hover:shadow-lg hover:shadow-rose-100 transition-all duration-300 hover:-translate-y-1">
-                    <div class="text-amber-400 text-lg mb-4">★★★★★</div>
-                    <p class="text-stone-600 text-base leading-relaxed italic mb-5">{{ $quote }}</p>
-                    <footer class="text-sm font-semibold text-stone-800">— <cite class="not-italic">{{ $author }}</cite></footer>
-                </blockquote>
-                @endforeach
+            <!-- Combination Skin -->
+            <div class="group bg-white rounded-[2rem] p-8 border border-[#F6ECE8] hover:border-[#D94368]/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="relative h-64 mb-8 overflow-hidden rounded-2xl bg-[#F9ECE8]">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=400" alt="Combination skin products" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#2B2023] mb-3">Combination Skin</h3>
+                <p class="text-[#76666B] mb-8 leading-relaxed">Find the perfect harmony for oily T-zones and dry cheeks with our balancing products.</p>
+                <a href="{{ route('shop', ['skin_type' => 'combination', 'category' => 'all']) }}" class="inline-block border-b-2 border-[#D94368] text-[#D94368] font-bold uppercase tracking-wider pb-1 hover:text-[#B83253] hover:border-[#B83253] transition-colors">
+                    Explore Products →
+                </a>
+            </div>
+
+            <!-- Dry Skin -->
+            <div class="group bg-white rounded-[2rem] p-8 border border-[#F6ECE8] hover:border-[#D94368]/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="relative h-64 mb-8 overflow-hidden rounded-2xl bg-[#F9ECE8]">
+                    <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=400" alt="Dry skin products" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#2B2023] mb-3">Dry Skin</h3>
+                <p class="text-[#76666B] mb-8 leading-relaxed">Deeply hydrate and restore your skin's protective barrier with our rich, nourishing formulas.</p>
+                <a href="{{ route('shop', ['skin_type' => 'dry', 'category' => 'all']) }}" class="inline-block border-b-2 border-[#D94368] text-[#D94368] font-bold uppercase tracking-wider pb-1 hover:text-[#B83253] hover:border-[#B83253] transition-colors">
+                    Explore Products →
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+<!-- Values Section -->
+<section class="py-20 bg-white border-t border-[#F6ECE8]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl mb-4">🌿</div>
+                <h4 class="font-bold text-[#2B2023] mb-2">Clean Ingredients</h4>
+                <p class="text-sm text-[#76666B]">Safe for your skin and the environment.</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-4">🐰</div>
+                <h4 class="font-bold text-[#2B2023] mb-2">Cruelty Free</h4>
+                <p class="text-sm text-[#76666B]">Never tested on animals, ever.</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-4">👩‍🔬</div>
+                <h4 class="font-bold text-[#2B2023] mb-2">Dermatologist Tested</h4>
+                <p class="text-sm text-[#76666B]">Clinically proven and safe formulas.</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-4">✨</div>
+                <h4 class="font-bold text-[#2B2023] mb-2">Premium Quality</h4>
+                <p class="text-sm text-[#76666B]">The best for your skin type.</p>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

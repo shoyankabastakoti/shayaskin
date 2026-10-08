@@ -9,6 +9,10 @@
     --font-serif: 'Cormorant Garamond', Georgia, serif;
 }
 
+.admin-layout .font-serif {
+    font-family: var(--font-sans);
+}
+
 
 
 /* Nav link style */

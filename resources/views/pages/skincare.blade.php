@@ -6,29 +6,29 @@
 @section('content')
 
     {{-- ── PAGE HERO ─────────────────────────────────────────────── --}}
-    <section class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-20 overflow-hidden" aria-label="Skincare hero">
-        <div class="pointer-events-none absolute -top-16 -right-16 w-80 h-80 rounded-full bg-pink-200/40 blur-3xl"></div>
+    <section class="relative bg-gradient-to-br from-[#F9ECE8] via-[#FFF9F7] to-[#F6ECE8] py-20 overflow-hidden" aria-label="Skincare hero">
+        <div class="pointer-events-none absolute -top-16 -right-16 w-80 h-80 rounded-full bg-[#D94368]/10 blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <p class="flex items-center gap-2.5 text-rose-500 text-[10px] font-semibold tracking-[0.2em] uppercase mb-4">
-                        <span class="block w-5 h-px bg-rose-400"></span> SKINCARE COLLECTION
+                    <p class="flex items-center gap-2.5 text-[#D94368] text-[10px] font-semibold tracking-[0.2em] uppercase mb-4">
+                        <span class="block w-5 h-px bg-[#D94368]"></span> SKINCARE COLLECTION
                     </p>
-                    <h1 class="font-serif text-5xl sm:text-6xl font-medium tracking-tight leading-[1.05] text-stone-800 mb-5">
-                        Your skin.<br><em class="text-rose-500 not-italic font-normal">Your ritual.</em>
+                    <h1 class="font-serif text-5xl sm:text-6xl font-medium tracking-tight leading-[1.05] text-[#2B2023] mb-5">
+                        Your skin.<br><em class="text-[#D94368] not-italic font-normal">Your ritual.</em>
                     </h1>
-                    <p class="text-stone-500 text-lg leading-relaxed max-w-md mb-8">
+                    <p class="text-[#76666B] text-lg leading-relaxed max-w-md mb-8">
                         Thoughtfully formulated skincare that works with your skin, not against it. Clean ingredients, real results.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         @foreach(['Serums','Moisturisers','Toners','SPF','Sets'] as $cat)
-                        <span class="bg-white border border-rose-200 text-rose-500 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-rose-500 hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
+                        <span class="bg-white border border-[#F6ECE8] text-[#D94368] text-sm font-medium px-4 py-1.5 rounded-full hover:bg-[#D94368] hover:text-white cursor-pointer transition-colors duration-150">{{ $cat }}</span>
                         @endforeach
                     </div>
                 </div>
                 <div class="relative flex justify-center lg:justify-end">
                     <img src="{{ asset('images/products/skincare_products.jpg') }}" alt="Shaya Skin skincare collection"
-                         class="w-full max-w-md h-72 lg:h-80 object-cover rounded-3xl shadow-2xl shadow-rose-200/60">
+                         class="w-full max-w-md h-72 lg:h-80 object-cover rounded-3xl shadow-2xl shadow-[#D94368]/15">
                 </div>
             </div>
         </div>
@@ -39,11 +39,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
                 <div>
-                    <h2 id="skincare-products-heading" class="font-serif text-3xl sm:text-4xl font-medium text-stone-800">All Skincare Products</h2>
-                    <p class="text-stone-400 text-base mt-1">6 products</p>
+                    <h2 id="skincare-products-heading" class="font-serif text-3xl sm:text-4xl font-medium text-[#2B2023]">All Skincare Products</h2>
+                    <p class="text-[#76666B] text-base mt-1">6 products</p>
                 </div>
                 <select id="sort-skincare" aria-label="Sort products"
-                        class="border border-rose-200 rounded-lg px-4 py-2 text-base text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white">
+                        class="border border-[#F6ECE8] rounded-lg px-4 py-2 text-base text-[#76666B] focus:outline-none focus:ring-2 focus:ring-[#D94368]/30 bg-white">
                     <option>Sort: Featured</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -60,24 +60,24 @@
                     ['hydra_cream','Overnight Repair Mask','Peptide-rich sleep mask that works while you rest.','$38.00','NEW','18'],
                     ['skincare_products','SPF 50 Daily Sunscreen','Lightweight broad-spectrum SPF. Invisible finish, no white cast.','$28.00','BEST SELLER','110'],
                 ] as [$img,$name,$desc,$price,$tag,$reviews])
-                <article class="group bg-rose-50 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-rose-100 transition-all duration-300 hover:-translate-y-1" id="product-{{ Str::slug($name) }}">
-                    <div class="relative h-64 overflow-hidden bg-rose-100">
+                <article class="group bg-[#FFF9F7] rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-[#D94368]/10 transition-all duration-300 hover:-translate-y-1" id="product-{{ Str::slug($name) }}">
+                    <div class="relative h-64 overflow-hidden bg-[#F9ECE8]">
                         <img src="{{ asset('images/products/' . $img . '.jpg') }}" alt="{{ $name }}"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @if($tag)
-                        <span class="absolute top-3 left-3 bg-rose-500 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{{ $tag }}</span>
+                        <span class="absolute top-3 left-3 bg-[#D94368] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{{ $tag }}</span>
                         @endif
-                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-stone-800/85 backdrop-blur text-white text-sm font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="quick-add-btn absolute bottom-0 left-0 right-0 bg-[#2B2023]/85 backdrop-blur text-white text-sm font-semibold uppercase tracking-wider py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             + Add to Cart
                         </button>
                     </div>
                     <div class="p-5 bg-white">
-                        <div class="text-amber-400 text-base mb-1">★★★★★ <span class="text-stone-400 text-sm">({{ $reviews }})</span></div>
-                        <h3 class="font-serif text-xl font-medium text-stone-800 mb-1.5">{{ $name }}</h3>
-                        <p class="text-stone-400 text-sm leading-relaxed mb-4">{{ $desc }}</p>
+                        <div class="text-amber-400 text-base mb-1">★★★★★ <span class="text-[#76666B] text-sm">({{ $reviews }})</span></div>
+                        <h3 class="font-serif text-xl font-medium text-[#2B2023] mb-1.5">{{ $name }}</h3>
+                        <p class="text-[#76666B] text-sm leading-relaxed mb-4">{{ $desc }}</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-serif text-xl font-semibold text-rose-500">{{ $price }}</span>
-                            <button class="quick-add-btn bg-rose-500 hover:bg-rose-600 text-white text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-colors duration-150">
+                            <span class="font-serif text-xl font-semibold text-[#D94368]">{{ $price }}</span>
+                            <button class="quick-add-btn bg-[#D94368] hover:bg-[#B83253] text-white text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-colors duration-150">
                                 Add →
                             </button>
                         </div>
@@ -89,9 +89,9 @@
     </section>
 
     {{-- ── WHY SHAYA SKINCARE ───────────────────────────────────── --}}
-    <section aria-labelledby="why-skincare" class="py-20 bg-rose-50">
+    <section aria-labelledby="why-skincare" class="py-20 bg-[#FFF9F7]">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="why-skincare" class="font-serif text-3xl sm:text-4xl font-medium text-stone-800 text-center mb-12">Why Shaya Skin?</h2>
+            <h2 id="why-skincare" class="font-serif text-3xl sm:text-4xl font-medium text-[#2B2023] text-center mb-12">Why Shaya Skin?</h2>
             <div class="grid sm:grid-cols-3 gap-8 text-center">
                 @foreach([
                     ['🌿','Clean Formulas','No parabens, sulphates, or synthetic fragrances. Just skin-loving ingredients.'],
@@ -100,8 +100,8 @@
                 ] as [$icon,$title,$text])
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
                     <span class="text-4xl block mb-4">{{ $icon }}</span>
-                    <h3 class="font-serif text-xl font-medium text-stone-800 mb-3">{{ $title }}</h3>
-                    <p class="text-stone-400 text-base leading-relaxed">{{ $text }}</p>
+                    <h3 class="font-serif text-xl font-medium text-[#2B2023] mb-3">{{ $title }}</h3>
+                    <p class="text-[#76666B] text-base leading-relaxed">{{ $text }}</p>
                 </div>
                 @endforeach
             </div>
@@ -117,11 +117,11 @@
             const orig = btn.textContent;
             btn.textContent = '✓ Added!';
             btn.classList.add('bg-green-500');
-            btn.classList.remove('bg-rose-500', 'hover:bg-rose-600');
+            btn.classList.remove('bg-[#D94368]', 'hover:bg-[#B83253]');
             setTimeout(() => {
                 btn.textContent = orig;
                 btn.classList.remove('bg-green-500');
-                btn.classList.add('bg-rose-500', 'hover:bg-rose-600');
+                btn.classList.add('bg-[#D94368]', 'hover:bg-[#B83253]');
             }, 2000);
         });
     });
